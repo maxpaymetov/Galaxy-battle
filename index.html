@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galaxy Battle</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: lime;
+      font-family: monospace;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+    }
+    #controls {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    button {
+      background: #111;
+      color: lime;
+      border: 2px solid lime;
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+
+<div id="controls">
+  <button onclick="shoot()">Z - Fire</button>
+  <button onclick="shield()">Y - Shield</button>
+  <button onclick="exit()">Exit</button>
+</div>
+
+<script>
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
+
+  function draw() {
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "lime";
+    ctx.font = "30px monospace";
+    ctx.fillText("Galaxy Battle", 280, 300);
+  }
+
+  function shoot() {
+    alert("Pew! Pew! Laser fired.");
+  }
+
+  function shield() {
+    alert("Shield activated!");
+  }
+
+  function exit() {
+    alert("Exiting Galaxy Battle...");
+  }
+
+  draw();
+</script>
+
+</body>
+</html>
